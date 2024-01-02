@@ -1,8 +1,12 @@
 import { styled } from "styled-components";
 import Header from "../header";
 import { ListImg } from "../../assets";
+import { useNavigate } from "react-router";
 
 const Main = () => {
+
+  const navigate = useNavigate();
+  
   return (
     <>
       <Header />
@@ -11,7 +15,7 @@ const Main = () => {
           <img src={ListImg} alt="listImg" />
           <Text>방과후 코스 리스트</Text>
         </Table>
-        <List>
+        <List onClick={() => {navigate("/afterSchoolCourseRegistraionDetail")}} >
           <ListText>7,8교시</ListText>
           <ListText>진로체험활동</ListText>
           <ListText>11-20 09:00 ~ 12-03 23:59</ListText>

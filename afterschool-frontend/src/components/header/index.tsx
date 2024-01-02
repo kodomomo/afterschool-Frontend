@@ -1,15 +1,18 @@
 import styled from "styled-components";
 import { Logo } from "../../assets";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
 
+  const navigate = useNavigate();
+
   return (
     <Container>
-      <img
+      <img onClick={() => {navigate("/main")}}
         src={Logo}
         alt="logo"
       />
-      <Div><Text>수강 신청 내역</Text>
+      <Div><Text onClick={() => {navigate("/afterSchoolCourseRegistraionDetail")}}>수강 신청 내역</Text>
       <Name>권하은 님</Name></Div>
       
     </Container>
@@ -19,7 +22,7 @@ const Header = () => {
 const Container = styled.div`
   background: #fff;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
-  height: 50px;
+  height: 60px;
   width: 100%;
   display: flex;
   padding: 10px 7%;
