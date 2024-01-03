@@ -29,7 +29,7 @@ const AfterSchoolCourseRegistrationDetail = () => {
 };
 
 const Container = styled.div`
-  padding: 50px 200px;
+  padding: 0 7%;
 `;
 
 const TitleSection = styled.div`
@@ -37,9 +37,9 @@ const TitleSection = styled.div`
   align-items: center;
   border-radius: 8px;
   background: #0D0D0D;
-  height: 70px;
+  height: 60px;
   padding: 0 0 0 40px;
-  margin-bottom: 50px;
+
 `;
 
 const Title = styled.div`
@@ -64,6 +64,7 @@ const ListHeader = styled.div`
     font-weight: 600;
     margin-left: 35px;
   }
+  margin-top: 25px;
 `;
 
 export default AfterSchoolCourseRegistrationDetail;
