@@ -1,68 +1,131 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 
-const AfterSchoolCourseRegistrationDetailList = () => {
-  const RegistrationDetailList = [
+import { useState } from "react";
+
+const AfterSchoolCourseRegistrationList = () => {
+
+ 
+
+
+  const RegistrationList = [
     {
-      num: 1,
-      title: "진로체험활동",
-      date: "11-20 09:00 ~ 12-03 23:59",
-      target: "1~3학년",
-      classNumber: "18개",
-      time: "23-12-27 8:33",
+      category: "7, 8교시",
+      subject: "배구반",
+      teacher: "김현태 선생님",
+      personnel: "(0/20)",
+      explain: "- 방과후학교 프로그램",
     },
     {
-      num: 2,
-      title: "진로체험활동",
-      date: "11-20 09:00 ~ 12-03 23:59",
-      target: "1~3학년",
-      classNumber: "18개",
-      time: "23-12-27 8:33",
+      category: "7, 8교시",
+      subject: "배구반",
+      teacher: "김현태 선생님",
+      personnel: "(0/20)",
+      explain: "- 방과후학교 프로그램",
     },
     {
-      num: 3,
-      title: "진로체험활동",
-      date: "11-20 09:00 ~ 12-03 23:59",
-      target: "1~3학년",
-      classNumber: "18개",
-      time: "23-12-27 8:33",
+      category: "7, 8교시",
+      subject: "배구반",
+      teacher: "김현태 선생님",
+      personnel: "(0/20)",
+      explain: "- 방과후학교 프로그램",
+    },
+    {
+      category: "7, 8교시",
+      subject: "배구반",
+      teacher: "김현태 선생님",
+      personnel: "(0/20)",
+      explain: "- 방과후학교 프로그램",
+    },
+    {
+      category: "7, 8교시",
+      subject: "배구반",
+      teacher: "김현태 선생님",
+      personnel: "(0/20)",
+      explain: "- 방과후학교 프로그램",
     },
   ];
 
   return (
     <>
-      <RegistrationList>
-        {RegistrationDetailList.map(
-          ({ num, title, date, target, classNumber, time }) => (
+      <ListSection>
+        {RegistrationList.map(
+          ({ category, subject, teacher, personnel, explain }) => (
             <List>
-              <p>{num}</p>
-              <p>{title}</p>
-              <p>{date}</p>
-              <p>{target}</p>
-              <p>{classNumber}</p>
-              <p>{time}</p>
+              <div>
+                <p>{category}</p>
+              </div>
+              <div>
+              <CheckboxInput
+                  type="checkbox"
+                
+                />
+                <Blod>{subject}</Blod>
+                <Blue>{teacher}</Blue>
+                <Blod>{personnel}</Blod>
+                <Middle>{explain}</Middle>
+              </div>
             </List>
           )
         )}
-      </RegistrationList>
+      </ListSection>
     </>
   );
 };
 
-const RegistrationList = styled.div``;
+const ListSection = styled.div`
+  margin-bottom: 150px;
+`;
+
+const CheckboxInput = styled.input`
+  margin-right: 11px;
+`;
 
 const List = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr; /* justify-content: space- */
+  grid-template-columns: 2.5fr 3fr;
+  padding: 0 200px;
   align-items: center;
-  height: 69px;
+  height: 97px;
   border-bottom: 1px solid #d2d2d2;
   p {
     font-family: Pretendard;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    margin-left: 40px;
+    line-height: normal;
+  }
+  div {
+    display: flex;
+  }
+  img {
+    margin-right: 11px;
   }
 `;
 
-export default AfterSchoolCourseRegistrationDetailList;
+const Blod = styled.div`
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+`;
+
+const Blue = styled.div`
+  color: #002dcc;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  margin-left: 13px;
+  margin-right: 8px;
+`;
+
+const Middle = styled.div`
+  color: #666;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  margin-left: 60px;
+`;
+
+export default AfterSchoolCourseRegistrationList;
