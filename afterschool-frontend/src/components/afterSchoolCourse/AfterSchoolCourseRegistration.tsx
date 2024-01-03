@@ -2,8 +2,23 @@ import styled from "styled-components";
 import Header from "../header";
 import { ListImg } from "../../assets";
 import AfterSchoolCourseRegistrationList from "./AfterSchoolCourseRegistrationList";
+import { useNavigate } from "react-router";
+
+import { format } from 'date-fns';
 
 const AfterSchoolCourseRegistration = () => {
+
+  const navigate = useNavigate();
+
+
+  const date = new Date();
+  const formattedDate = format(date, ' h:mm:ss');
+
+  const handleApplyButtonClick = () => {
+    alert("신청되었습니다!"); 
+   navigate("/main")
+  };
+  
   return(
     <>
     <Header />
@@ -15,13 +30,13 @@ const AfterSchoolCourseRegistration = () => {
         <TimerSection>
           <State>신청중</State>
           <div>
-            <Timer>05 : 01 : 23</Timer>
+            <Timer>{formattedDate}</Timer>
           </div>
           <Subject>진로체험활동</Subject>
           <Time>11-20 09:00 ~ 12-03 23:59</Time>
         </TimerSection>
         <ButtonSection>
-          <Button>신청하기</Button>
+          <Button onClick={handleApplyButtonClick} >신청하기</Button>
         </ButtonSection>
         <div>
           <ListTitle>
@@ -87,8 +102,8 @@ const Timer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 350px;
-  height: 100px;
+  width: 20%;
+  height: 110px;
   border-radius: 30px;
   border: 2px solid #002DCC;
   background: #FFF;
