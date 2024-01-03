@@ -23,13 +23,18 @@ const AfterSchoolCourseRegistration = () => {
         <ButtonSection>
           <Button>신청하기</Button>
         </ButtonSection>
-        <ListSection>
+        <div>
           <ListTitle>
             <p>구분</p>
             <p>월요일</p>
           </ListTitle>
           <AfterSchoolCourseRegistrationList />
-        </ListSection>
+          <ListTitle>
+            <p>구분</p>
+            <p>수요일</p>
+          </ListTitle>
+          <AfterSchoolCourseRegistrationList />
+        </div>
       </Container>
     </>
   );
@@ -134,10 +139,6 @@ const Button = styled.button`
   font-style: normal;
   font-weight: 700;
   margin-bottom: 20px;
-`;
-
-const ListSection = styled.div`
-  
 `;
 
 const ListTitle = styled.div`
